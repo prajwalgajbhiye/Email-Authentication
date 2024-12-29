@@ -118,7 +118,7 @@ class _StudentSignUpState extends State<StudentSignUp> {
                   Text(
                     "Create Your Account",
                     style: TextStyle(
-                      color: loginButtonColor,
+                      color: Colors.grey.shade900,
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
@@ -127,7 +127,7 @@ class _StudentSignUpState extends State<StudentSignUp> {
                   Text(
                     "Sign up to get started",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: labelColor, fontSize: 16),
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                   const SizedBox(height: 40),
                   SizedBox(
@@ -210,7 +210,7 @@ class _StudentSignUpState extends State<StudentSignUp> {
                     onPressed: _isLoadingSignUp ? null : _signUp,
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: loginButtonColor,
+                      backgroundColor: Colors.grey.shade900,
                       padding: const EdgeInsets.symmetric(
                           vertical: 16, horizontal: 100),
                       shape: RoundedRectangleBorder(
@@ -228,7 +228,7 @@ class _StudentSignUpState extends State<StudentSignUp> {
                     children: [
                       Text(
                         "Already have an account?",
-                        style: TextStyle(color: textFieldColor, fontSize: 14),
+                        style: TextStyle(color: Colors.grey.shade500, fontSize: 14),
                       ),
                       GestureDetector(
                         onTap: () => Navigator.pop(context),

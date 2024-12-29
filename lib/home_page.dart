@@ -14,9 +14,9 @@ class HomePage extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              backgroundColor1,
-              backgroundColor2,
-              backgroundColor4,
+              Colors.grey,
+              Colors.grey.shade300,
+              Colors.grey.shade600,
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

@@ -43,8 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Padding(
@@ -55,7 +54,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               Text(
                 "Forgot Password?",
                 style: TextStyle(
-                  color: loginButtonColor,
+                  color: Colors.grey.shade900,
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
@@ -65,7 +64,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 controller: _emailController,
                 decoration: InputDecoration(
                   labelText: 'Email Address',
-                  labelStyle: TextStyle(color: labelColor),
+                  labelStyle: TextStyle(color: Colors.grey.shade500),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -78,7 +77,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 onPressed: _sendPasswordResetEmail, // Send reset email
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: loginButtonColor,
+                  backgroundColor: Colors.grey.shade900,
                   padding: const EdgeInsets.symmetric(
                     vertical: 16,
                     horizontal: 120,

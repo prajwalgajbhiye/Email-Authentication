@@ -48,7 +48,6 @@ class _StudentSignInState extends State<StudentSignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         // create a gradient background
         child: Container(
@@ -112,7 +111,7 @@ class _StudentSignInState extends State<StudentSignIn> {
                       onPressed: _login,
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: loginButtonColor,
+                        backgroundColor: Colors.grey.shade900,
                         padding: const EdgeInsets.symmetric(
                             vertical: 16, horizontal: 120),
                         shape: RoundedRectangleBorder(
@@ -146,7 +145,7 @@ class _StudentSignInState extends State<StudentSignIn> {
                           "  Or continue with   ",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: textColor2,
+                            color: Colors.grey.shade700,
                             fontSize: 16,
                           ),
                         ),
@@ -172,7 +171,7 @@ class _StudentSignInState extends State<StudentSignIn> {
                           child: Text(
                             "Forgot your password?",
                             style: TextStyle(
-                                color: textFieldColor, fontSize: 14),
+                                color: Colors.grey.shade500, fontSize: 14),
                           ),
                         ),
                         GestureDetector(
