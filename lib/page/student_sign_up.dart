@@ -70,7 +70,7 @@ class _StudentSignUpState extends State<StudentSignUp> {
       if (userCredential != null) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
       }
     }
@@ -90,157 +90,157 @@ class _StudentSignUpState extends State<StudentSignUp> {
     double width = MediaQuery.of(context).size.width * 0.9;
 
     return Scaffold(
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              colors: [
-                Colors.white24,
+      // gradient background
+      body: Container(
+        alignment: Alignment.center,
+        decoration: const BoxDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment.topCenter,
+            colors: [
+              Colors.white24,
 
-                Colors.pink,
-              ],
-            ),
+              Colors.pink,
+            ],
           ),
-          child: SingleChildScrollView(
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(8)),
-              padding: EdgeInsets.all(8),
-              margin: EdgeInsets.all(20),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Create Your Account",
-                      style: TextStyle(
-                        color: loginButtonColor,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
+        ),
+        child: SingleChildScrollView(
+          //white sign up box
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(8)),
+            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.all(20),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Create Your Account",
+                    style: TextStyle(
+                      color: loginButtonColor,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(height: 8),
-                    Text(
-                      "Sign up to get started",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: labelColor, fontSize: 16),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    "Sign up to get started",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: labelColor, fontSize: 16),
+                  ),
+                  const SizedBox(height: 40),
+                  SizedBox(
+                    height: height,
+                    width: width,
+                    child: CustomTextField(
+                      label: 'Enter Full Name',
+                      controller: _usernameController,
                     ),
-                    const SizedBox(height: 40),
-                    SizedBox(
-                      height: height,
-                      width: width,
-                      child: CustomTextField(
-                        label: 'Enter Full Name',
-                        controller: _usernameController,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      height: height,
-                      width: width,
-                      child: CustomTextField(
+                  ),
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: height,
+                    width: width,
+                    child: CustomTextField(
 
-                        label: 'Email Address',
-                        controller: _emailController,
-                        suffixIcon: _isLoadingOtp
-                            ? const CircularProgressIndicator()
-                            : IconButton(
-                                icon: const Icon(Icons.send),
-                                onPressed: _sendOtp,
-                              ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      height: height,
-                      width: width,
-                      child: CustomTextField(
-                        label: 'OTP',
-                        controller: _otpController,
-                        suffixIcon: IconButton(
-                          icon: const Icon(Icons.verified),
-                          onPressed: _verifyOtp,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      height: height,
-                      width: width,
-                      child: CustomTextField(
-                        label: 'Password',
-                        controller: _passwordController,
-                        obscureText: _obscurePassword,
-                        suffixIcon: IconButton(
-                          icon: Icon(_obscurePassword
-                              ? Icons.visibility_off
-                              : Icons.visibility),
-                          onPressed: () {
-                            setState(
-                                () => _obscurePassword = !_obscurePassword);
-                          },
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      height: height,
-                      width: width,
-                      child: CustomTextField(
-                        label: 'Re-enter Password',
-                        controller: _rePasswordController,
-                        obscureText: _obscureRePassword,
-                        suffixIcon: IconButton(
-                          icon: Icon(_obscureRePassword
-                              ? Icons.visibility_off
-                              : Icons.visibility),
-                          onPressed: () {
-                            setState(
-                                () => _obscureRePassword = !_obscureRePassword);
-                          },
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    ElevatedButton(
-                      onPressed: _isLoadingSignUp ? null : _signUp,
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: loginButtonColor,
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 16, horizontal: 100),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: _isLoadingSignUp
+                      label: 'Email Address',
+                      controller: _emailController,
+                      suffixIcon: _isLoadingOtp
                           ? const CircularProgressIndicator()
-                          : const Text('Sign Up',
-                              style: TextStyle(fontSize: 18)),
+                          : IconButton(
+                              icon: const Icon(Icons.send),
+                              onPressed: _sendOtp,
+                            ),
                     ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Already have an account?",
-                          style: TextStyle(color: textFieldColor, fontSize: 14),
-                        ),
-                        GestureDetector(
-                          onTap: () => Navigator.pop(context),
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text("Login",
-                                style: TextStyle(color: Colors.blue)),
-                          ),
-                        ),
-                      ],
+                  ),
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: height,
+                    width: width,
+                    child: CustomTextField(
+                      label: 'OTP',
+                      controller: _otpController,
+                      suffixIcon: IconButton(
+                        icon: const Icon(Icons.verified),
+                        onPressed: _verifyOtp,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: height,
+                    width: width,
+                    child: CustomTextField(
+                      label: 'Password',
+                      controller: _passwordController,
+                      obscureText: _obscurePassword,
+                      suffixIcon: IconButton(
+                        icon: Icon(_obscurePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility),
+                        onPressed: () {
+                          setState(
+                              () => _obscurePassword = !_obscurePassword);
+                        },
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: height,
+                    width: width,
+                    child: CustomTextField(
+                      label: 'Re-enter Password',
+                      controller: _rePasswordController,
+                      obscureText: _obscureRePassword,
+                      suffixIcon: IconButton(
+                        icon: Icon(_obscureRePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility),
+                        onPressed: () {
+                          setState(
+                              () => _obscureRePassword = !_obscureRePassword);
+                        },
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    onPressed: _isLoadingSignUp ? null : _signUp,
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: loginButtonColor,
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 100),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: _isLoadingSignUp
+                        ? const CircularProgressIndicator()
+                        : const Text('Sign Up',
+                            style: TextStyle(fontSize: 18)),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Already have an account?",
+                        style: TextStyle(color: textFieldColor, fontSize: 14),
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text("Login",
+                              style: TextStyle(color: Colors.blue)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),

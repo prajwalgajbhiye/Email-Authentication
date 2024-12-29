@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Title
-              Text(
+              const Text(
                 "Welcome to the Home Page",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -46,16 +46,16 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => StudentSignIn()),
+                    MaterialPageRoute(builder: (context) => const StudentSignIn()),
                   );
                 },
-                icon: Icon(Icons.logout_outlined),
-                label: Text(
+                icon: const Icon(Icons.logout_outlined),
+                label: const Text(
                   "Sign Out",
                   style: TextStyle(fontSize: 18),
                 ),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.blueAccent,
                   shape: RoundedRectangleBorder(
